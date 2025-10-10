@@ -1,168 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service - Fadi's Assistant</title>
-  <meta name="description" content="Official Terms of Service for Fadi's Assistant Discord bot. Learn about rules, limitations, and data handling.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fadi's Assistant | Terms of Service</title>
+  <link rel="icon" href="https://i.postimg.cc/76pnnD5b/Picsart-25-09-27-21-31-27-414.png">
 
-  <!-- 🌐 Open Graph / Discord Embed -->
-  <meta property="og:title" content="Fadi's Assistant - Terms of Service">
-  <meta property="og:description" content="Learn about how Fadi’s Assistant handles usage, moderation, and user rights.">
-  <meta property="og:thumbnail" content="https://i.postimg.cc/76pnnD5b/Picsart-25-09-27-21-31-27-414.png">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Fadi's Assistant">
+  <!-- ✅ Discord / Social Embed Metadata -->
+  <meta property="og:title" content="Fadi's Assistant | Terms of Service">
+  <meta property="og:description" content="Read the Terms of Service for Fadi’s Assistant — the all-in-one Discord bot for moderation, fun, games, and more.">
+  <meta property="og:image" content="https://i.postimg.cc/76pnnD5b/Picsart-25-09-27-21-31-27-414.png">
   <meta property="og:url" content="https://fadifazbar.github.io/Terms-Of-Service/">
-  <meta name="theme-color" content="#f4d03f">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#FFD700"> <!-- Yellow embed color -->
 
-  <!-- 🐦 Twitter Card -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Fadi's Assistant - Terms of Service">
-  <meta name="twitter:description" content="Learn about how Fadi’s Assistant handles usage, moderation, and user rights.">
+  <meta name="twitter:title" content="Fadi's Assistant | Terms of Service">
+  <meta name="twitter:description" content="Understand your rights and rules when using Fadi’s Assistant Discord bot.">
   <meta name="twitter:image" content="https://i.postimg.cc/76pnnD5b/Picsart-25-09-27-21-31-27-414.png">
 
-  <link rel="icon" href="https://i.postimg.cc/76pnnD5b/Picsart-25-09-27-21-31-27-414.png" type="image/png">
-
   <style>
-    * { transition: background-color 0.4s, color 0.4s; }
+    :root {
+      --bg-light: #f4f4f4;
+      --bg-dark: #1e1e1e;
+      --text-light: #1e1e1e;
+      --text-dark: #f4f4f4;
+      --accent: #5865F2;
+      --card-light: #ffffff;
+      --card-dark: #2b2b2b;
+    }
+
     body {
-      font-family: "Poppins", sans-serif;
       margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f5f5f5;
-      color: #222;
+      font-family: "Inter", sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background 0.3s, color 0.3s, opacity 1.2s ease;
       opacity: 0;
-      transition: opacity 0.8s ease-in;
     }
-    body.fade-in { opacity: 1; }
+
+    body.loaded {
+      opacity: 1;
+    }
+
+    .dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
     header {
-      background: #f4d03f;
-      color: #000;
-      text-align: center;
-      padding: 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 1rem 2rem;
+      background-color: var(--accent);
+      color: white;
+      position: relative;
     }
+
     header img {
-      width: 90px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      margin-bottom: 10px;
+      vertical-align: middle;
+      margin-right: 10px;
     }
-    h1 { margin: 0; font-size: 2.2rem; }
-    .container {
-      max-width: 900px;
-      margin: 2.5rem auto;
-      padding: 0 1.5rem;
+
+    h1 {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 1.8rem;
     }
-    h2 { color: #f4d03f; }
-    .toggle-theme {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      padding: 10px 16px;
+
+    .toggle-btn {
+      background: white;
       border: none;
-      background: #f4d03f;
-      color: #000;
-      border-radius: 25px;
-      font-weight: bold;
+      border-radius: 50px;
+      padding: 8px 16px;
       cursor: pointer;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      font-weight: 600;
+      transition: background 0.3s;
     }
+
+    .toggle-btn:hover {
+      background: #ddd;
+    }
+
+    nav {
+      margin-top: 10px;
+      text-align: center;
+      width: 100%;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 14px;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.3s;
+    }
+
+    /* ✨ Glow underline animation */
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0%;
+      height: 2px;
+      background-color: #FFD700;
+      box-shadow: 0 0 6px #FFD700;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: #FFD700;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: var(--card-light);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: background 0.3s;
+    }
+
+    .dark main {
+      background-color: var(--card-dark);
+      box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
     footer {
       text-align: center;
-      padding: 1.5rem;
-      background: #f4d03f;
-      color: #000;
-      margin-top: 3rem;
+      padding: 2rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
     }
-    .dark-mode {
-      background-color: #1e1e1e;
-      color: #ddd;
+
+    .invite-btn {
+      display: inline-block;
+      background-color: var(--accent);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: 0.3s;
     }
-    .dark-mode header, .dark-mode footer {
-      background-color: #222;
-      color: #f4d03f;
+
+    .invite-btn:hover {
+      background-color: #4752c4;
     }
-    .dark-mode .toggle-theme {
-      background: #333;
-      color: #f4d03f;
-    }
-    a { color: #f4d03f; font-weight: bold; text-decoration: none; }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://i.postimg.cc/76pnnD5b/Picsart-25-09-27-21-31-27-414.png" alt="Fadi's Assistant Icon">
-    <h1>Fadi's Assistant - Terms of Service</h1>
-    <p>Last Updated: October 10, 2025</p>
+    <div>
+      <img src="https://i.postimg.cc/76pnnD5b/Picsart-25-09-27-21-31-27-414.png" alt="Bot Logo">
+      <h1>Fadi's Assistant</h1>
+    </div>
+    <button class="toggle-btn" id="modeToggle">🌙 Dark Mode</button>
+    <nav>
+      <a href="https://fadifazbar.github.io/Privacy-Policy/">Privacy Policy</a>
+      <a href="https://fadifazbar.github.io/Terms-Of-Service/" style="text-decoration: underline;">Terms of Service</a>
+    </nav>
   </header>
 
-  <button class="toggle-theme" id="theme-toggle">🌙 Dark Mode</button>
+  <main>
+    <h2>Terms of Service</h2>
+    <p><strong>Last Updated:</strong> October 10, 2025</p>
 
-  <div class="container">
-    <h2>1. Acceptance of Terms</h2>
-    <p>By using or interacting with <strong>Fadi’s Assistant</strong> (the "Bot"), you agree to these Terms of Service. If you do not agree, you must stop using the Bot immediately.</p>
+    <p>Welcome to <strong>Fadi's Assistant</strong> — a multipurpose Discord bot developed by <strong>Fadi</strong>. By using this bot, you agree to the following Terms of Service.</p>
 
-    <h2>2. Usage Guidelines</h2>
-    <p>Users must comply with Discord's <a href="https://discord.com/terms" target="_blank">Terms of Service</a> and <a href="https://discord.com/guidelines" target="_blank">Community Guidelines</a>. You must not:</p>
+    <h3>1. Acceptance of Terms</h3>
+    <p>By adding or using Fadi’s Assistant in your Discord server, you agree to these Terms of Service and all applicable Discord policies. If you disagree, please remove the bot immediately.</p>
+
+    <h3>2. Use of the Bot</h3>
+    <p>You agree not to misuse the bot or use it for any illegal, harassing, or disruptive activities. The bot is meant for entertainment, moderation, and server enhancement only.</p>
+
+    <h3>3. Data Handling</h3>
+    <p>Fadi’s Assistant stores limited non-sensitive data such as:</p>
     <ul>
-      <li>Use the Bot for illegal or harmful purposes.</li>
-      <li>Exploit, abuse, or reverse engineer the Bot.</li>
-      <li>Spam or overload the Bot’s systems.</li>
+      <li>User IDs</li>
+      <li>Server IDs</li>
+      <li>Channel IDs</li>
     </ul>
+    <p>This information is only used to ensure proper bot functionality and saved securely in Railway’s <strong>/data/</strong> directory. For details, read our <a href="https://fadifazbar.github.io/Privacy-Policy/">Privacy Policy</a>.</p>
 
-    <h2>3. Data Usage</h2>
-    <p>The Bot collects minimal information such as <strong>User IDs</strong>, <strong>Server IDs</strong>, and <strong>Channel IDs</strong> for functionality and stability purposes. Data is stored safely using <code>/data/</code> on Railway and is never shared with third parties.</p>
+    <h3>4. Availability and Changes</h3>
+    <p>Bot uptime is not guaranteed. The developer reserves the right to add, modify, or remove features at any time without prior notice.</p>
 
-    <h2>4. Ownership</h2>
-    <p>Fadi’s Assistant is created and owned by <strong>Fadi</strong>. All intellectual property, branding, and features belong solely to the developer.</p>
+    <h3>5. Liability</h3>
+    <p>Fadi’s Assistant and its developer are not responsible for any damages, data loss, or server issues that may occur from using the bot.</p>
 
-    <h2>5. Service Availability</h2>
-    <p>The Bot’s uptime is not guaranteed. Features may be changed, paused, or discontinued at any time without prior notice.</p>
+    <h3>6. Termination</h3>
+    <p>We reserve the right to blacklist or restrict access to the bot for users or servers that violate these Terms or Discord’s policies.</p>
 
-    <h2>6. Termination</h2>
-    <p>The developer reserves the right to remove or ban access from any user or server violating these Terms or misusing the Bot.</p>
-
-    <h2>7. Limitation of Liability</h2>
-    <p>The developer is not responsible for any damages, data loss, or disruptions caused by the Bot’s use or downtime.</p>
-
-    <h2>8. Updates to Terms</h2>
-    <p>These Terms may be updated at any time. Continued use of the Bot means you accept the latest version of the Terms.</p>
-
-    <h2>9. Contact</h2>
-    <p>For questions, reach out via:</p>
+    <h3>7. Contact</h3>
+    <p>For questions, issues, or appeals, contact the developer directly:</p>
     <ul>
       <li>Email: <a href="mailto:faditoilet@gmail.com">faditoilet@gmail.com</a></li>
-      <li>Discord: <strong>@fadi_fazbarr</strong></li>
+      <li>Discord: <a href="https://discord.com/users/1167531276467708055">@fadi_fazbarr</a></li>
     </ul>
 
-    <p>Invite the Bot: <a href="https://discord.com/oauth2/authorize?client_id=1242542083059749005&permissions=8&integration_type=0&scope=bot" target="_blank">Invite Fadi’s Assistant</a></p>
-  </div>
+    <h3>8. Invite the Bot</h3>
+    <a href="https://discord.com/oauth2/authorize?client_id=1242542083059749005&permissions=8&integration_type=0&scope=bot" class="invite-btn">Invite Fadi’s Assistant</a>
+    <p>Prefix: <strong>$</strong> | Supports Slash Commands ✅</p>
+  </main>
 
   <footer>
-    <p>&copy; © 2025 Fadi | Fadi’s Assistant Discord Bot</p>
+    © 2025 Fadi's Assistant | Made with ❤️ by Fadi
   </footer>
 
   <script>
-    // Fade-in animation
-    window.addEventListener("load", () => {
-      document.body.classList.add("fade-in");
-    });
+    const toggle = document.getElementById("modeToggle");
 
-    // Theme toggle with saved preference
-    const themeToggle = document.getElementById("theme-toggle");
-    const body = document.body;
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "dark") {
-      body.classList.add("dark-mode");
-      themeToggle.textContent = "☀️ Light Mode";
+    // Load theme preference
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+      toggle.textContent = "☀️ Light Mode";
     }
 
-    themeToggle.addEventListener("click", () => {
-      body.classList.toggle("dark-mode");
-      const isDark = body.classList.contains("dark-mode");
-      themeToggle.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
-      localStorage.setItem("theme", isDark ? "dark" : "light");
+    // Fade in on load
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+
+    // Toggle theme
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const darkMode = document.body.classList.contains("dark");
+      toggle.textContent = darkMode ? "☀️ Light Mode" : "🌙 Dark Mode";
+      localStorage.setItem("theme", darkMode ? "dark" : "light");
     });
   </script>
 </body>
