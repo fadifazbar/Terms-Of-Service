@@ -12,13 +12,7 @@
   <meta property="og:image" content="https://i.postimg.cc/76pnnD5b/Picsart-25-09-27-21-31-27-414.png">
   <meta property="og:url" content="https://fadifazbar.github.io/Terms-Of-Service/">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#FFD700"> <!-- Yellow embed color -->
-
-  <!-- 🐦 Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Fadi's Assistant | Terms of Service">
-  <meta name="twitter:description" content="Read the official Terms of Service for Fadi’s Assistant, covering rules, usage, and developer rights.">
-  <meta name="twitter:image" content="https://i.postimg.cc/76pnnD5b/Picsart-25-09-27-21-31-27-414.png">
+  <meta name="theme-color" content="#FFD700">
 
   <style>
     :root {
@@ -29,6 +23,7 @@
       --accent: #5865F2;
       --card-light: #ffffff;
       --card-dark: #2b2b2b;
+      --link-glow: 0 0 8px rgba(117,198,255,0.8);
     }
 
     body {
@@ -56,6 +51,10 @@
       padding: 1rem 2rem;
       background-color: var(--accent);
       color: white;
+      position: relative;
+      width: 100%;
+      top: 0;
+      z-index: 10;
     }
 
     header img {
@@ -74,13 +73,22 @@
 
     .toggle-btn {
       border: none;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      font-size: 1.4rem;
+      border-radius: 25px;
+      width: 70px;
+      height: 40px;
+      font-size: 1.3rem;
       cursor: pointer;
       font-weight: bold;
-      transition: background 0.3s;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, #0394fc, #75c6ff);
+      color: #fff;
+    }
+
+    .emoji {
+      position: absolute;
+      transition: all 0.4s ease;
+      font-size: 1.5rem;
     }
 
     main {
@@ -99,8 +107,26 @@
     }
 
     a {
-      color: var(--accent);
+      color: #00bfff;
       text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #75c6ff;
+      text-shadow: var(--link-glow);
+    }
+
+    h3 {
+      transition: color 0.3s;
+    }
+
+    .dark h3 {
+      color: #fff480;
+    }
+
+    h3 {
+      color: #00bfff;
     }
 
     footer {
@@ -112,18 +138,98 @@
 
     .invite-btn {
       display: inline-block;
-      background-color: var(--accent);
+      background: linear-gradient(135deg, #0394fc, #75c6ff);
       color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
+      padding: 12px 24px;
+      border-radius: 10px;
       font-weight: bold;
       text-decoration: none;
       margin-top: 10px;
-      transition: 0.3s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .invite-btn:hover {
-      background-color: #4752c4;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(117,198,255,0.8);
+    }
+
+    /* Scroll To Top */
+    #scrollTop {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0394fc, #75c6ff);
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: opacity 0.3s, transform 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 100;
+    }
+
+    #scrollTop.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #scrollTop:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(117,198,255,0.8);
+    }
+
+    /* FAQ Section */
+    .faq {
+      margin-top: 3rem;
+    }
+
+    .faq h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    details {
+      background-color: rgba(255,255,255,0.05);
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 0.6rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    details[open] {
+      background-color: rgba(117,198,255,0.1);
+    }
+
+    summary {
+      font-weight: bold;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dark details {
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .toggle-btn {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
@@ -133,7 +239,10 @@
       <img src="https://i.postimg.cc/76pnnD5b/Picsart-25-09-27-21-31-27-414.png" alt="Bot Logo">
       <h1>Fadi's Assistant</h1>
     </div>
-    <button class="toggle-btn" id="modeToggle">☀️</button>
+    <button class="toggle-btn" id="modeToggle">
+      <span class="emoji" id="sun">☀️</span>
+      <span class="emoji" id="moon" style="left:-50px;">🌕</span>
+    </button>
   </header>
 
   <main>
@@ -173,39 +282,97 @@
       <li>Discord: <a href="https://discord.com/users/1167531276467708055">@fadi_fazbarr</a></li>
     </ul>
 
-    <h3>9. Related Links</h3>
-    <a href="https://discord.com/oauth2/authorize?client_id=1242542083059749005&permissions=8&integration_type=0&scope=bot" class="invite-btn">Invite Fadi’s Assistant</a>
+    <a href="https://discord.com/oauth2/authorize?client_id=1242542083059749005&permissions=8&integration_type=0&scope=bot" class="invite-btn">🤖 Invite Fadi’s Assistant</a>
+
+    <section class="faq">
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <details>
+        <summary>🤖 Can I use Fadi’s Assistant on multiple servers?</summary>
+        <p>Yes! You can invite the bot to as many servers as you like.</p>
+      </details>
+
+      <details>
+        <summary>⚙️ What permissions does the bot need?</summary>
+        <p>The bot requires basic moderation and message management permissions for full functionality.</p>
+      </details>
+
+      <details>
+        <summary>🧩 Can I request new features?</summary>
+        <p>Absolutely! You can reach out to the developer on Discord for suggestions.</p>
+      </details>
+
+      <details>
+        <summary>🛡️ How does the bot handle moderation actions?</summary>
+        <p>All moderation commands follow Discord API standards and log actions for transparency.</p>
+      </details>
+
+      <details>
+        <summary>📄 Can my server be blacklisted?</summary>
+        <p>Yes, if it violates the Terms of Service or Discord’s own rules.</p>
+      </details>
+
+      <details>
+        <summary>📬 How can I contact support?</summary>
+        <p>Through the provided Discord or email contact methods.</p>
+      </details>
+
+      <details>
+        <summary>💾 Where is the bot data stored?</summary>
+        <p>All data is stored securely on private Railway servers, inaccessible to the public.</p>
+      </details>
+    </section>
   </main>
 
   <footer>
     © 2025 Fadi's Assistant | Developed with ❤️ by Fadi
   </footer>
 
+  <button id="scrollTop" title="Scroll to top">⬆️</button>
+
   <script>
     const toggle = document.getElementById("modeToggle");
+    const sun = document.getElementById("sun");
+    const moon = document.getElementById("moon");
+    const scrollTopBtn = document.getElementById("scrollTop");
 
-    // Apply saved theme
+    // Load saved theme
     if (localStorage.getItem("theme") === "dark") {
       document.body.classList.add("dark");
-      toggle.textContent = "🌕";
-      toggle.style.backgroundColor = "#f5f2f2";
-    } else {
-      toggle.textContent = "☀️";
-      toggle.style.backgroundColor = "#fae3a5";
+      sun.style.left = "80px";
+      moon.style.left = "10px";
     }
 
-    // Fade-in load
     window.addEventListener("load", () => {
       document.body.classList.add("loaded");
     });
 
-    // Toggle dark/light
     toggle.addEventListener("click", () => {
       document.body.classList.toggle("dark");
-      const darkMode = document.body.classList.contains("dark");
-      toggle.textContent = darkMode ? "🌕" : "☀️";
-      toggle.style.backgroundColor = darkMode ? "#f5f2f2" : "#fae3a5";
-      localStorage.setItem("theme", darkMode ? "dark" : "light");
+      const isDark = document.body.classList.contains("dark");
+
+      if (isDark) {
+        sun.style.left = "80px";
+        moon.style.left = "10px";
+      } else {
+        sun.style.left = "10px";
+        moon.style.left = "-50px";
+      }
+
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+
+    // Scroll button visibility
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        scrollTopBtn.classList.add("show");
+      } else {
+        scrollTopBtn.classList.remove("show");
+      }
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
 </body>
