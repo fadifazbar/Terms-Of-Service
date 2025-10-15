@@ -4,331 +4,315 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fadi's Assistant | Terms of Service</title>
+  <meta property="og:title" content="Fadi's Assistant | Terms of Service">
+  <meta property="og:description" content="View Fadi’s Assistant’s Terms of Service and policies.">
+  <meta property="og:image" content="https://i.postimg.cc/Bvd7L7G4/Picsart-25-10-11-19-30-55-153.jpg">
+  <meta name="theme-color" content="#2b1055">
   <link rel="icon" href="https://i.postimg.cc/76pnnD5b/Picsart-25-09-27-21-31-27-414.png">
-
-  <meta property="og:title" content="Fadi's Assistant | Terms of Service" />
-  <meta property="og:description" content="Read the official Terms of Service for Fadi’s Assistant — the multipurpose Discord bot by Fadi." />
-  <meta property="og:image" content="https://i.postimg.cc/Bvd7L7G4/Picsart-25-10-11-19-30-55-153.jpg" />
-  <meta property="og:url" content="https://fadifazbar.github.io/Terms-Of-Service/" />
-  <meta name="theme-color" content="#5865F2" />
-
   <style>
     :root {
-      --neon-blue: #00e0ff;
-      --neon-purple: #b06bff;
-      --light-bg: #f4f4fa;
-      --dark-bg: #0a0a14;
-      --light-card: #ffffff;
-      --dark-card: #131321;
-      --text-dark: #121212;
-      --text-light: #f5f5f5;
-      --glow: 0 0 12px;
+      --dark-bg: #0d0d12;
+      --dark-accent: #3f0071;
+      --dark-text: #f5f5f5;
+      --light-bg: #ffffff;
+      --light-accent: #b5179e;
+      --light-text: #121212;
+      --neon-blue: #00ffff;
+      --neon-pink: #ff00ff;
     }
 
-    * { box-sizing: border-box; scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
     body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: var(--text-light);
-      background: radial-gradient(circle at top left, #0f0f25, #0a0a14);
+      font-family: "Poppins", sans-serif;
+      background: var(--dark-bg);
+      color: var(--dark-text);
+      line-height: 1.6;
+      transition: all 0.6s ease;
       opacity: 0;
-      transition: opacity 1s ease, background 1s ease, color 0.6s ease;
+      transform: scale(0.98);
     }
 
-    body.loaded { opacity: 1; }
-    body.light { background: linear-gradient(135deg, #f6f8ff, #e5e9ff); color: var(--text-dark); }
+    body.loaded {
+      opacity: 1;
+      transform: scale(1);
+      transition: opacity 1s ease, transform 0.8s ease;
+    }
 
-    /* Header */
     header {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
+      z-index: 1000;
+      background: rgba(15, 15, 20, 0.9);
+      backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      backdrop-filter: blur(12px);
-      background: rgba(20, 20, 40, 0.7);
-      color: white;
       border-bottom: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 0 12px rgba(0,0,0,0.4);
-      transition: background 0.5s ease, color 0.5s ease;
-      z-index: 50;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    header img {
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background: var(--dark-accent);
+      color: white;
+      font-weight: 600;
+      transition: 0.4s;
+    }
+
+    .toggle-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--neon-blue);
+    }
+
+    main {
+      margin-top: 100px;
+      padding: 2rem;
+      max-width: 900px;
+      margin-inline: auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      background: rgba(255,255,255,0.05);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: background 0.3s ease;
+    }
+
+    section:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 0.8rem 0;
+    }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      font-size: 1.1rem;
+    }
+
+    .faq-question:hover {
+      color: var(--neon-pink);
+    }
+
+    .faq-question span.emoji {
+      display: inline-block;
+      transition: transform 0.4s ease;
+    }
+
+    .faq-question.open span.emoji {
+      transform: rotate(20deg) scale(1.2);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.4s ease;
+      margin-top: 0.3rem;
+      color: #ddd;
+    }
+
+    .faq-answer.open {
+      max-height: 500px;
+      opacity: 1;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    #upBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--dark-accent);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    #upBtn.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1.1);
+    }
+
+    /* Light Theme */
+    body.light {
+      background: var(--light-bg);
+      color: var(--light-text);
     }
 
     body.light header {
       background: rgba(255,255,255,0.8);
-      color: #121212;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
-    header div { display: flex; align-items: center; gap: 12px; }
-
-    header img {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--neon-blue);
-      animation: float 3s ease-in-out infinite;
+    body.light .toggle-btn {
+      background: var(--light-accent);
     }
 
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-
-    header h1 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      text-shadow: var(--glow) var(--neon-blue);
-    }
-
-    /* Theme Toggle */
-    .toggle-btn {
-      width: 60px; height: 32px; border-radius: 50px;
-      background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
-      position: relative; cursor: pointer; border: none; outline: none;
-      transition: all 0.5s ease;
-    }
-
-    .toggle-circle {
-      position: absolute;
-      width: 28px; height: 28px; top: 2px; left: 2px;
-      background: white; border-radius: 50%; transition: all 0.5s ease;
-    }
-
-    body.light .toggle-circle { transform: translateX(28px); background: #121212; }
-
-    /* Main */
-    main {
-      max-width: 900px;
-      margin: 4rem auto;
-      padding: 2rem;
-      background: var(--dark-card);
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-      transition: all 0.6s ease;
-      color: var(--text-light);
-      text-shadow: 0 0 5px rgba(0,224,255,0.3);
-    }
-
-    body.light main {
-      background: var(--light-card);
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      color: var(--text-dark);
-      text-shadow: 0 0 4px rgba(176,107,255,0.2);
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 2rem;
-      background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    h3 { color: var(--neon-blue); margin-top: 2rem; }
-    body.light h3 { color: #4f46e5; }
-
-    .divider { height: 2px; background: linear-gradient(90deg, transparent, var(--neon-blue), transparent); margin: 2rem 0; }
-
-    /* FAQ */
-    .faq { margin-top: 3rem; }
-    .faq-item {
-      background: rgba(255,255,255,0.05);
-      border-radius: 12px;
-      margin-bottom: 1rem;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: all 0.4s ease;
-      box-shadow: 0 0 10px rgba(0,224,255,0.1);
-    }
-
-    .faq-item:hover { box-shadow: 0 0 15px var(--neon-blue); transform: scale(1.01); }
-
-    .faq-question {
-      width: 100%; padding: 1rem 1.2rem; font-size: 1.1rem; font-weight: 600;
-      cursor: pointer; background: none; border: none; color: inherit;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-
-    .faq-emoji { display: inline-block; font-size: 1.3rem; transition: transform 0.4s ease; }
-    .faq-item.active .faq-emoji { animation: spinTilt 0.5s ease; }
-
-    @keyframes spinTilt {
-      0% { transform: rotate(0); }
-      50% { transform: rotate(30deg) scale(1.3); }
-      100% { transform: rotate(0); }
-    }
-
-    .faq-answer {
-      max-height: 0; overflow: hidden; opacity: 0; padding: 0 1rem;
-      transition: all 0.5s ease;
-    }
-
-    .faq-item.active .faq-answer {
-      max-height: 200px; opacity: 1; padding: 1rem 1.2rem;
-    }
-
-    /* Buttons */
-    .invite-btn {
-      display: inline-block;
-      background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-      color: white;
-      padding: 12px 24px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 2rem;
-      text-align: center;
-      transition: 0.3s;
-      box-shadow: 0 0 20px var(--neon-purple);
-    }
-
-    .invite-btn:hover { transform: scale(1.07); box-shadow: 0 0 25px var(--neon-blue); }
-
-    /* To Top */
-    #toTopBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
-      color: white;
-      font-size: 1.5rem;
-      border: none;
-      cursor: pointer;
-      opacity: 0;
-      transform: scale(0.6);
-      transition: all 0.5s ease;
-      box-shadow: 0 0 15px var(--neon-blue);
-    }
-
-    #toTopBtn.show { opacity: 1; transform: scale(1.05); }
-
-    @media (max-width: 600px) {
-      header { flex-direction: column; text-align: center; }
-      main { padding: 1.2rem; }
+    body.light section {
+      background: rgba(0,0,0,0.05);
     }
   </style>
 </head>
-
-<body class="dark">
+<body>
   <header>
-    <div>
-      <img src="https://i.postimg.cc/76pnnD5b/Picsart-25-09-27-21-31-27-414.png" alt="Bot Logo">
-      <h1>Fadi's Assistant</h1>
+    <div class="left">
+      <img src="https://i.postimg.cc/76pnnD5b/Picsart-25-09-27-21-31-27-414.png" alt="Bot PFP">
     </div>
-    <button class="toggle-btn" id="themeToggle"><span class="toggle-circle"></span></button>
+    <button id="themeToggle" class="toggle-btn">Toggle Theme</button>
   </header>
 
   <main>
-    <h2>Terms of Service</h2>
-    <p><strong>Last Updated:</strong> October 15, 2025</p>
-
-    <div class="divider"></div>
+    <h1>Fadi’s Assistant — Terms of Service</h1>
 
     <section>
-      <h3>1. Acceptance of Terms</h3>
-      <p>By inviting or using Fadi’s Assistant, you agree to follow these Terms of Service. If you disagree, remove the bot immediately.</p>
-
-      <h3>2. Usage Guidelines</h3>
-      <p>You must comply with Discord’s <a href="https://discord.com/terms" target="_blank">Terms of Service</a> and <a href="https://discord.com/guidelines" target="_blank">Community Guidelines</a>. Misusing commands, spamming, or exploiting features may result in blacklisting or termination of access.</p>
-
-      <h3>3. Data and Privacy</h3>
-      <p>Fadi’s Assistant does not store personal user data or message content. Temporary data such as user IDs or server IDs may be used for functionality, but is never shared or sold. For privacy details, refer to our <a href="https://fadifazbar.github.io/Privacy-Policy/" target="_blank">Privacy Policy</a>.</p>
-
-      <h3>4. Availability and Updates</h3>
-      <p>The bot may go offline or be updated without notice. We do not guarantee 24/7 uptime or uninterrupted access.</p>
-
-      <h3>5. Prohibited Actions</h3>
-      <ul>
-        <li>Using the bot for illegal or malicious purposes</li>
-        <li>Attempting to exploit, clone, or self-host the bot</li>
-        <li>Bypassing restrictions or moderation systems</li>
-      </ul>
-
-      <h3>6. Liability</h3>
-      <p>Fadi’s Assistant and its developer are not responsible for any damages or losses resulting from the use of the bot. Use the bot at your own risk.</p>
-
-      <h3>7. Termination</h3>
-      <p>We reserve the right to suspend or ban users and servers at any time for violating the ToS or Discord’s rules.</p>
-
-      <h3>8. Contact</h3>
-      <p>For inquiries or support, contact: <a href="mailto:faditoilet@gmail.com">faditoilet@gmail.com</a></p>
+      <h2>1. Acceptance of Terms</h2>
+      <p>By inviting or using Fadi’s Assistant, you agree to comply with these Terms. If you do not agree, you may remove the bot from your server at any time.</p>
     </section>
 
-    <div class="divider"></div>
-
-    <section class="faq">
-      <h3>Frequently Asked Questions</h3>
-      <div id="faq-container"></div>
+    <section>
+      <h2>2. Usage Guidelines</h2>
+      <p>Users must follow Discord’s Terms of Service and Community Guidelines while using the bot. Abuse of commands, spam, or harassment is strictly prohibited.</p>
     </section>
 
-    <a href="https://discord.com/oauth2/authorize?client_id=1242542083059749005&permissions=8&scope=bot" class="invite-btn">🤖 Invite Bot</a>
+    <section>
+      <h2>3. Data & Privacy</h2>
+      <p>Fadi’s Assistant stores only essential configuration data such as prefixes, server settings, and moderation logs. No personal user data is collected or shared.</p>
+    </section>
+
+    <section>
+      <h2>4. Limitations</h2>
+      <p>The bot is provided “as is.” Fadi’s Assistant is not liable for any damages or losses caused by misuse, downtime, or unexpected behavior.</p>
+    </section>
+
+    <section>
+      <h2>5. Contact</h2>
+      <p>For support or inquiries, reach out via email at <a href="mailto:faditoilet@gmail.com">faditoilet@gmail.com</a>.</p>
+    </section>
+
+    <h2 style="text-align:center; margin-top:3rem;">Frequently Asked Questions ✨</h2>
+    <p style="text-align:center; font-size:0.9rem; color:gray;">(FAQs update randomly each visit)</p>
+    <div id="faq"></div>
   </main>
 
-  <footer style="text-align:center;margin:2rem 0;">© 2025 Fadi’s Assistant | Developed with ❤️ by Fadi</footer>
-  <button id="toTopBtn">⬆️</button>
+  <button id="upBtn">↑</button>
+
+  <footer>
+    <p>Last Updated: October 15, 2025</p>
+  </footer>
 
   <script>
-    window.addEventListener("load", () => document.body.classList.add("loaded"));
-    const body = document.body;
-    const toggle = document.getElementById("themeToggle");
-
-    function applyTheme(theme) {
-      body.className = theme + " loaded";
-      localStorage.setItem("theme", theme);
-    }
-
-    toggle.addEventListener("click", () => {
-      const newTheme = body.classList.contains("light") ? "dark" : "light";
-      applyTheme(newTheme);
+    // Fade-in animation
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
     });
 
-    const savedTheme = localStorage.getItem("theme") || "dark";
-    applyTheme(savedTheme);
+    // Theme toggle
+    const toggleBtn = document.getElementById("themeToggle");
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") document.body.classList.add("light");
 
-    // FAQ Data
-    const faqData = [
-      ["💡", "What does accepting ToS mean?", "It means you agree to these rules and Discord’s guidelines."],
-      ["🤖", "Can I host the bot?", "No, redistribution or self-hosting is not allowed."],
-      ["⚙️", "Why is the bot offline?", "It may be under maintenance or updates."],
-      ["🔒", "Does it store messages?", "No, it never stores message content."],
-      ["📩", "How to contact support?", "Email: <a href='mailto:faditoilet@gmail.com'>faditoilet@gmail.com</a>"],
-      ["🎮", "Does it support all servers?", "Yes, as long as it follows Discord ToS."],
-      ["🚫", "What happens if I break rules?", "You can be banned from using the bot."]
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
+    });
+
+    // Go up button
+    const upBtn = document.getElementById("upBtn");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) upBtn.classList.add("show");
+      else upBtn.classList.remove("show");
+    });
+    upBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+    // FAQ system
+    const faqPool = [
+      { q: "💡 Why does Fadi’s Assistant need so many permissions?", a: "To function properly — features like moderation, webhooks, and embeds all require specific permissions." },
+      { q: "⚙️ Can I self-host the bot?", a: "No, Fadi’s Assistant isn’t open-source at this time." },
+      { q: "🔒 What data does the bot store?", a: "Only essential configuration data such as prefixes, moderation logs, and command settings — nothing sensitive." },
+      { q: "📜 What happens if I break the rules?", a: "Violations may result in blacklist or removal from the bot’s services." },
+      { q: "🤖 Can I invite the bot to multiple servers?", a: "Absolutely! The bot is designed to work across multiple servers seamlessly." },
+      { q: "🧠 How often is Fadi’s Assistant updated?", a: "The bot receives updates regularly to improve performance and security." },
+      { q: "✨ Who can use developer-only commands?", a: "Only verified developers of Fadi’s Assistant — these commands are restricted for security reasons." },
+      { q: "🪄 Why is my command not working?", a: "Some commands depend on permissions or channel configuration — make sure the bot has access." },
+      { q: "📢 Can I suggest new features?", a: "Yes! You can send suggestions directly via email at faditoilet@gmail.com." },
+      { q: "🔧 Is there a premium version?", a: "Not yet — but some features may become premium in the future." }
     ];
 
-    const randomFaqs = faqData.sort(() => 0.5 - Math.random()).slice(0, 5);
-    const faqContainer = document.getElementById("faq-container");
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
 
-    randomFaqs.forEach(([emoji, q, a]) => {
-      const item = document.createElement("div");
-      item.className = "faq-item";
-      item.innerHTML = `
-        <button class="faq-question"><span class="faq-emoji">${emoji}</span> ${q}</button>
-        <div class="faq-answer">${a}</div>
-      `;
-      faqContainer.appendChild(item);
+    const faq = document.getElementById("faq");
+    shuffle(faqPool).slice(0, 5).forEach(item => {
+      const div = document.createElement("div");
+      div.className = "faq-item";
+      div.innerHTML = `
+        <div class="faq-question"><span class="emoji">${item.q.split(" ")[0]}</span> ${item.q.substring(2)}</div>
+        <div class="faq-answer">${item.a}</div>`;
+      faq.appendChild(div);
     });
 
-    document.querySelectorAll(".faq-item").forEach(item => {
-      item.querySelector(".faq-question").addEventListener("click", () => {
-        item.classList.toggle("active");
+    document.querySelectorAll(".faq-question").forEach(q => {
+      q.addEventListener("click", () => {
+        q.classList.toggle("open");
+        q.nextElementSibling.classList.toggle("open");
       });
     });
-
-    // To top button
-    const toTopBtn = document.getElementById("toTopBtn");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) toTopBtn.classList.add("show");
-      else toTopBtn.classList.remove("show");
-    });
-    toTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
   </script>
 </body>
 </html>
