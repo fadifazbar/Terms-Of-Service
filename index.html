@@ -3,400 +3,343 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fadi's Assistant | Terms of Service</title>
-  <link rel="icon" href="https://i.postimg.cc/76pnnD5b/Picsart-25-09-27-21-31-27-414.png">
-
-  <!-- ✅ Discord & Social Embeds -->
-  <meta property="og:title" content="Fadi's Assistant | Terms of Service" />
-  <meta property="og:description" content="Read the official Terms of Service for Fadi’s Assistant — the multipurpose Discord bot by Fadi." />
-  <meta property="og:image" content="https://i.postimg.cc/Bvd7L7G4/Picsart-25-10-11-19-30-55-153.jpg" />
-  <meta property="og:url" content="https://fadifazbar.github.io/Terms-Of-Service/" />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#fff68f" />
-
-  <!-- 🐦 Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Fadi's Assistant | Terms of Service" />
-  <meta name="twitter:description" content="Learn about usage rules, data handling, and responsibilities when using Fadi’s Assistant on Discord." />
-  <meta name="twitter:image" content="https://i.postimg.cc/Bvd7L7G4/Picsart-25-10-11-19-30-55-153.jpg" />
+  <title>Fadi’s Assistant | Terms of Service</title>
 
   <style>
+    /* === ROOT THEME === */
     :root {
-      --accent: #5865f2;
-      --light-bg: #f4f4f4;
-      --dark-bg: #1e1e1e;
-      --light-card: #ffffff;
-      --dark-card: #2b2b2b;
-      --light-text: #1e1e1e;
-      --dark-text: #f4f4f4;
-      --gradient-btn: linear-gradient(135deg, #0394fc, #75c6ff);
+      --bg: #0a0a0f;
+      --text: #f5f5f5;
+      --accent: linear-gradient(270deg, #00bfff, #ff7b00, #ff4c4c, #00bfff);
+      --glow: 0 0 10px rgba(0, 191, 255, 0.6);
+      --card-bg: rgba(255,255,255,0.05);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f8fa;
+        --text: #111;
+        --card-bg: rgba(0,0,0,0.05);
+      }
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      font-family: "Inter", sans-serif;
-      background: var(--light-bg);
-      color: var(--light-text);
-      transition: background 0.4s, color 0.4s;
-      opacity: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
     }
 
-    body.loaded {
-      opacity: 1;
-      transition: opacity 1s ease;
-    }
-
-    body.dark {
-      background: var(--dark-bg);
-      color: var(--dark-text);
-    }
-
-    /* Header */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background: linear-gradient(270deg, #00b7ff, #fff68f);
-      background-size: 400% 400%;
-      animation: gradientMove 21s ease infinite;
+      background: var(--accent);
+      background-size: 300% 300%;
+      animation: gradientShift 8s ease infinite;
       color: white;
-      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: var(--glow);
+      cursor: pointer;
+      transition: 0.3s;
     }
 
-    header div {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    header.glow-flash {
+      box-shadow: 0 0 25px #ff7b00;
     }
 
     header img {
-      animation: floatLogo 2s ease-in-out infinite;
-      width: 48px;
-      height: 48px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
     }
 
-    header h1 {
-      font-size: 1.8rem;
+    h1 {
+      margin: 0;
+      font-size: 1.6rem;
     }
 
-    @keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@keyframes floatLogo {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-8px);
-    }
-}
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-      }
+    .version-badge {
+      background: #00bfff;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      margin-left: 10px;
+      box-shadow: 0 0 10px rgba(0,191,255,0.6);
     }
 
-    /* Main */
     main {
       max-width: 900px;
       margin: 2rem auto;
-      background: var(--light-card);
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: background 0.4s;
-    }
-
-    body.dark main {
-      background: var(--dark-card);
-      box-shadow: 0 4px 12px rgba(255,255,255,0.08);
+      padding: 1rem 2rem;
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease;
     }
 
     h2 {
-      text-align: center;
+      background: var(--accent);
+      background-size: 200% 200%;
+      animation: gradientShift 6s ease infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: 0.3s;
     }
 
-    h3 {
-      color: #00bfff;
-      transition: color 0.4s;
+    h2:hover {
+      text-shadow: 0 0 12px rgba(0,191,255,0.7);
     }
 
-    body.dark h3 {
-      color: #fff480;
-    }
-
-    a {
-      color: #00bfff;
-      text-decoration: none;
-      font-weight: 500;
-      position: relative;
-    }
-
-    a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 100%;
+    hr {
+      border: 0;
       height: 2px;
-      background: linear-gradient(90deg, #00bfff, #ffffff);
-      opacity: 0;
-      transition: opacity 0.3s;
+      border-radius: 5px;
+      background: linear-gradient(270deg, #00bfff, #ff7b00, #00bfff);
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
+      margin: 2rem 0;
     }
 
-    a:hover::after {
-      opacity: 1;
+    /* === TABLE OF CONTENTS === */
+    .toc {
+      background: rgba(255,255,255,0.05);
+      padding: 1rem 1.5rem;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      box-shadow: inset 0 0 15px rgba(0,191,255,0.2);
     }
 
-    /* Buttons */
-    .invite-btn, #toTopBtn {
-      display: inline-block;
-      background: var(--gradient-btn);
-      color: white;
-      border: none;
-      border-radius: 50px;
-      padding: 12px 24px;
-      font-weight: bold;
+    .toc a {
+      display: block;
       text-decoration: none;
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.3s, opacity 0.3s;
+      color: var(--text);
+      margin: 5px 0;
+      transition: 0.3s;
     }
 
-    .invite-btn:hover {
-      transform: scale(1.05);
+    .toc a:hover {
+      color: #00bfff;
+      transform: translateX(4px);
     }
 
-    #toTopBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    /* FAQ */
+    /* === FAQ === */
     .faq {
-      margin-top: 3rem;
-    }
-
-    .faq h2 {
-      text-align: center;
-      margin-bottom: 1rem;
+      margin-top: 2rem;
     }
 
     .faq-item {
-      margin-bottom: 1rem;
-      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      margin-bottom: 10px;
+      border-radius: 12px;
       overflow: hidden;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      transition: background 0.3s;
-    }
-
-    body.dark .faq-item {
-      border-color: rgba(255, 255, 255, 0.1);
-      background: rgba(255, 255, 255, 0.05);
+      transition: all 0.3s;
     }
 
     .faq-question {
       width: 100%;
-      padding: 1rem;
+      text-align: left;
       background: none;
       border: none;
-      color: inherit;
-      font-size: 1rem;
-      font-weight: bold;
-      text-align: left;
-      cursor: pointer;
+      color: var(--text);
+      font-size: 1.1rem;
+      padding: 1rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .faq-question:hover {
+      background: rgba(0,191,255,0.1);
     }
 
     .faq-answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s;
+      transition: all 0.4s ease;
       padding: 0 1rem;
-      opacity: 0;
     }
 
     .faq-item.active .faq-answer {
       max-height: 200px;
       padding: 1rem;
-      opacity: 1;
+    }
+
+    .faq-emoji {
+      display: inline-block;
+      transition: transform 0.4s ease;
+    }
+
+    .faq-item.active .faq-emoji {
+      transform: rotate(15deg) scale(1.2);
+    }
+
+    /* === BUTTONS / FOOTER === */
+    .feedback-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 12px;
+      border: none;
+      background: var(--accent);
+      background-size: 300% 300%;
+      animation: gradientShift 8s ease infinite;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: var(--glow);
+    }
+
+    .feedback-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0,191,255,0.8);
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
+      opacity: 0.8;
       font-size: 0.9rem;
-      opacity: 0.7;
     }
 
-    /* Theme Toggle Animation */
-    .toggle-btn {
-      background: #fae3a5;
-      border: none;
-      width: 60px;
-      height: 32px;
-      border-radius: 50px;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
+    footer a {
+      color: #00bfff;
+      text-decoration: none;
+      transition: 0.3s;
     }
 
-    .toggle-icon {
-      position: absolute;
-      font-size: 1.4rem;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: all 0.4s ease;
-    }
-
-    .light .toggle-icon.sun {
-      left: 16px;
-      opacity: 1;
-    }
-
-    .light .toggle-icon.moon {
-      right: -24px;
-      opacity: 0;
-    }
-
-    .dark .toggle-icon.sun {
-      left: -24px;
-      opacity: 0;
-    }
-
-    .dark .toggle-icon.moon {
-      right: 16px;
-      opacity: 1;
+    footer a:hover {
+      text-decoration: underline;
+      text-shadow: 0 0 10px #00bfff;
     }
   </style>
 </head>
-
-<body class="light">
-  <header>
-    <div>
-      <img src="https://i.postimg.cc/76pnnD5b/Picsart-25-09-27-21-31-27-414.png" alt="Bot Logo">
-      <h1>Fadi's Assistant</h1>
-    </div>
-    <button class="toggle-btn" id="modeToggle">
-      <span class="toggle-icon sun">☀️</span>
-      <span class="toggle-icon moon">🌕</span>
-    </button>
+<body>
+  <header id="logoHeader">
+    <h1>Fadi’s Assistant <span class="version-badge">Updated Oct 11, 2025</span></h1>
+    <img src="https://i.postimg.cc/Bvd7L7G4/Picsart-25-10-11-19-30-55-153.jpg" alt="Logo">
   </header>
 
   <main>
-    <h2><strong>Fadi's Assistant Terms of Service</strong></h2>
-    <p><strong>Last Updated:</strong> October 11, 2025</p>
-    <p>Welcome to <strong>Fadi’s Assistant</strong> — a multipurpose Discord bot created by <strong>Fadi</strong>. By inviting or using this bot, you agree to the following Terms of Service.</p>
-
-    <h3>1. Acceptance of Terms</h3>
-    <p>Using Fadi’s Assistant means you acknowledge and accept these Terms. If you disagree, remove the bot from your server immediately.</p>
-
-    <h3>2. Usage Guidelines</h3>
-    <ul>
-      <li>Comply with Discord’s <a href="https://discord.com/terms">Terms of Service</a> and <a href="https://discord.com/guidelines">Community Guidelines</a>.</li>
-      <li>Do not engage in spamming, harassment, or exploit abuse.</li>
-      <li>Do not reverse engineer or redistribute the bot without permission.</li>
-    </ul>
-
-    <h3>3. Data Collection</h3>
-    <p>The bot may collect limited data (like <strong>User IDs</strong> and <strong>Server IDs</strong>) to function. Data is stored securely and never shared with third parties.</p>
-
-    <h3>4. Service Availability</h3>
-    <p>The bot is provided “as-is.” Uptime or feature availability isn’t guaranteed and may change without notice.</p>
-
-    <h3>5. Liability</h3>
-    <p>Fadi is not responsible for damages or data loss from using the bot. Use it at your own discretion.</p>
-
-    <h3>6. Termination</h3>
-    <p>Fadi may ban users or servers violating these terms without warning.</p>
-
-    <h3>7. Modifications</h3>
-    <p>These terms may change over time. Continuing to use the bot after updates means you agree to them.</p>
-
-    <h3>8. Bot Updates And Future Changes</h3>
-    <p>Features may be added, removed, updated or changed at any time.</p>
-
-    <h3>9. Server Owner Responsibility</h3>
-    <p>Server owners are responsible for who uses the bot, if anything the bot had done that ruined your server blame it on yourself.</p>    
-
-    <h3>10. Contact</h3>
-    <p>Email: <a href="mailto:faditoilet@gmail.com">faditoilet@gmail.com</a><br>
-    Discord: <a href="https://discord.com/users/1167531276467708055">@fadi_fazbarr</a></p>
-
-    <a href="https://discord.com/oauth2/authorize?client_id=1242542083059749005&permissions=8&integration_type=0&scope=bot" class="invite-btn">🤖 Invite Bot</a>
-
-    <section class="faq">
-      <h2>❓ Frequently Asked Questions</h2>
-
-      <div class="faq-item"><button class="faq-question">📜 What does accepting ToS mean?</button><div class="faq-answer">It means you agree to follow Discord rules and these bot terms.</div></div>
-      <div class="faq-item"><button class="faq-question">⚙️ Can I modify or host the bot?</button><div class="faq-answer">No, modification or redistribution is not allowed without permission.</div></div>
-      <div class="faq-item"><button class="faq-question">🚫 What happens if I break the ToS?</button><div class="faq-answer">You may be banned or blocked from using the bot.</div></div>
-      <div class="faq-item"><button class="faq-question">🧠 Does the bot collect my data?</button><div class="faq-answer">Only basic IDs for functionality. No message content is stored.</div></div>
-      <div class="faq-item"><button class="faq-question">🕒 How often are ToS updated?</button><div class="faq-answer">They may be updated occasionally. You’ll be bound by the latest version.</div></div>
-      <div class="faq-item"><button class="faq-question">📩 How can I contact Fadi?</button><div class="faq-answer">Via Discord or email as listed above.</div></div>
-      <div class="faq-item"><button class="faq-question">💡 Can I suggest ToS changes?</button><div class="faq-answer">Suggestions are welcome via Discord DMs.</div></div>
-      <div class="faq-item"><button class="faq-question">🔒 Who can access my data?</button><div class="faq-answer">Only Fadi has access — no one else.</div></div>
+    <section class="toc">
+      <h2>📜 Table of Contents</h2>
+      <a href="#terms">1. Acceptance of Terms</a>
+      <a href="#guidelines">2. Usage Guidelines</a>
+      <a href="#rights">3. Developer Rights</a>
+      <a href="#liability">4. Limitation of Liability</a>
+      <a href="#faq">5. FAQ</a>
     </section>
+
+    <section id="terms">
+      <h2>1. Acceptance of Terms</h2>
+      <p>By inviting or using Fadi’s Assistant, you agree to these Terms of Service. If you disagree, remove the bot immediately.</p>
+    </section>
+
+    <hr>
+
+    <section id="guidelines">
+      <h2>2. Usage Guidelines</h2>
+      <p>Users must follow Discord’s Terms of Service and Community Guidelines. You agree not to misuse the bot for spam, raids, or automation abuse.</p>
+    </section>
+
+    <hr>
+
+    <section id="rights">
+      <h2>3. Developer Rights</h2>
+      <p>The developer (Fadi) reserves the right to modify, suspend, or terminate access to any feature or user at any time, with or without notice.</p>
+    </section>
+
+    <hr>
+
+    <section id="liability">
+      <h2>4. Limitation of Liability</h2>
+      <p>The bot is provided “as is.” No guarantee is made for uptime, accuracy, or availability. The developer is not responsible for any damages or data loss caused by use of the bot.</p>
+    </section>
+
+    <hr>
+
+    <section id="faq" class="faq">
+      <h2>5. FAQ</h2>
+
+      <div class="faq-item">
+        <button class="faq-question"><span class="faq-emoji">💡</span> What is Fadi’s Assistant?</button>
+        <div class="faq-answer"><p>Fadi’s Assistant is a multipurpose Discord bot offering moderation, fun commands, and utilities for your server.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question"><span class="faq-emoji">⚙️</span> How often is the bot updated?</button>
+        <div class="faq-answer"><p>Updates are rolled out frequently to ensure smooth performance, new features, and stability fixes.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question"><span class="faq-emoji">🤔</span> Who can use the bot?</button>
+        <div class="faq-answer"><p>Anyone who complies with Discord’s Terms of Service and the bot’s rules can invite and use it.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question"><span class="faq-emoji">🔒</span> What about data privacy?</button>
+        <div class="faq-answer"><p>Fadi’s Assistant respects user privacy. Check out the linked Privacy Policy for detailed info.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question"><span class="faq-emoji">📜</span> Can I report a bug or suggest a feature?</button>
+        <div class="faq-answer"><p>Yes! Click the Feedback button below or join the support server to share suggestions.</p></div>
+      </div>
+    </section>
+
+    <center>
+      <button class="feedback-btn" onclick="window.open('https://discord.gg/yourserver', '_blank')">💬 Feedback / Support Server</button>
+    </center>
   </main>
 
-  <footer>© 2025 Fadi’s Assistant | Developed with ❤️ by Fadi</footer>
-
-  <button id="toTopBtn">⬆️</button>
+  <footer>
+    <p>Read our <a href="https://fadifazbar.github.io/Privacy-Policy/">Privacy Policy</a> • © 2025 Fadi</p>
+  </footer>
 
   <script>
-    window.addEventListener("load", () => document.body.classList.add("loaded"));
-
-    const toggle = document.getElementById("modeToggle");
-    const body = document.body;
-
-    toggle.addEventListener("click", () => {
-      body.classList.toggle("dark");
-      body.classList.toggle("light");
-      localStorage.setItem("theme", body.classList.contains("dark") ? "dark" : "light");
+    // FAQ open/close
+    document.querySelectorAll(".faq-question").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const item = btn.parentElement;
+        item.classList.toggle("active");
+      });
     });
 
-    if (localStorage.getItem("theme") === "dark") {
-      body.classList.add("dark");
-      body.classList.remove("light");
-    }
-
-    // FAQ accordion
-    document.querySelectorAll(".faq-question").forEach(q => {
-      q.addEventListener("click", () => q.parentElement.classList.toggle("active"));
+    // Easter Egg
+    let clicks = 0;
+    const logo = document.getElementById("logoHeader");
+    logo.addEventListener("click", () => {
+      clicks++;
+      if (clicks === 5) {
+        logo.classList.add("glow-flash");
+        alert("🐔 You found Fadi’s Secret Chicken!");
+        setTimeout(() => logo.classList.remove("glow-flash"), 1000);
+        clicks = 0;
+      }
     });
-
-    // Scroll to top button
-    const toTopBtn = document.getElementById("toTopBtn");
-    window.addEventListener("scroll", () => {
-      toTopBtn.style.display = window.scrollY > 300 ? "flex" : "none";
-    });
-    toTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
   </script>
 </body>
 </html>
