@@ -36,7 +36,12 @@
       font-family: 'Inter', sans-serif;
       color: var(--text-light);
       background: radial-gradient(circle at top left, #0f0f25, #0a0a14);
-      transition: background 1s ease, color 0.6s ease;
+      opacity: 0;
+      transition: opacity 1s ease, background 1s ease, color 0.6s ease;
+    }
+
+    body.loaded {
+      opacity: 1;
     }
 
     body.light {
@@ -59,6 +64,7 @@
       border-bottom: 1px solid rgba(255,255,255,0.1);
       box-shadow: 0 0 12px rgba(0,0,0,0.4);
       transition: background 0.5s ease, color 0.5s ease;
+      z-index: 50;
     }
 
     body.light header {
@@ -130,11 +136,15 @@
       border-radius: 20px;
       box-shadow: 0 0 20px rgba(0,0,0,0.4);
       transition: all 0.6s ease;
+      color: var(--text-light);
+      text-shadow: 0 0 5px rgba(0,224,255,0.3);
     }
 
     body.light main {
       background: var(--light-card);
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      color: var(--text-dark);
+      text-shadow: 0 0 4px rgba(176,107,255,0.2);
     }
 
     h2 {
@@ -170,8 +180,14 @@
       border-radius: 12px;
       margin-bottom: 1rem;
       overflow: hidden;
-      transition: all 0.3s ease;
       border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.4s ease;
+      box-shadow: 0 0 10px rgba(0,224,255,0.1);
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 0 15px var(--neon-blue);
+      transform: scale(1.01);
     }
 
     .faq-question {
@@ -218,7 +234,7 @@
       padding: 1rem 1.2rem;
     }
 
-    /* ---------- Button ---------- */
+    /* ---------- Buttons ---------- */
     .invite-btn {
       display: inline-block;
       background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
@@ -252,13 +268,14 @@
       border: none;
       cursor: pointer;
       opacity: 0;
-      transform: scale(0.7);
-      transition: all 0.4s ease;
+      transform: scale(0.6);
+      transition: all 0.5s ease;
+      box-shadow: 0 0 15px var(--neon-blue);
     }
 
     #toTopBtn.show {
       opacity: 1;
-      transform: scale(1);
+      transform: scale(1.05);
     }
 
     @media (max-width: 600px) {
@@ -272,8 +289,8 @@
     }
   </style>
 </head>
-<body class="dark">
 
+<body class="dark">
   <header>
     <div>
       <img src="https://i.postimg.cc/76pnnD5b/Picsart-25-09-27-21-31-27-414.png" alt="Bot Logo">
@@ -300,11 +317,13 @@
   <button id="toTopBtn">⬆️</button>
 
   <script>
+    window.addEventListener("load", () => document.body.classList.add("loaded"));
+
     const body = document.body;
     const toggle = document.getElementById("themeToggle");
 
     function applyTheme(theme) {
-      body.className = theme;
+      body.className = theme + " loaded";
       localStorage.setItem("theme", theme);
     }
 
