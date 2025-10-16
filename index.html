@@ -352,22 +352,43 @@
       });
     });
 
-    // To top button
-    const toTopBtn = document.getElementById("toTopBtn");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
-        toTopBtn.classList.add("show");
+    // To top button — robust, initializes on load and uses passive scroll listener
+    (function() {
+      const SCROLL_THRESHOLD = 400;
+      // Ensure code runs after DOM is ready
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
       } else {
-        toTopBtn.classList.remove("show");
+        init();
       }
-    });
 
-toTopBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
+      function init() {
+        const toTopBtn = document.getElementById("toTopBtn");
+        if (!toTopBtn) {
+          console.warn("toTopBtn element not found in DOM.");
+          return;
+        }
+
+        const toggleShow = () => {
+          if (window.scrollY > SCROLL_THRESHOLD) {
+            toTopBtn.classList.add("show");
+          } else {
+            toTopBtn.classList.remove("show");
+          }
+        };
+
+        // Initialize state in case page loaded already scrolled (or anchor)
+        toggleShow();
+
+        // Use passive scroll listener for performance
+        window.addEventListener("scroll", toggleShow, { passive: true });
+
+        toTopBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+    })();
   </script>
 </body>
 </html>
