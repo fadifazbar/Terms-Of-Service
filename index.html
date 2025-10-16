@@ -215,7 +215,7 @@
     /* To Top Button */
     #toTopBtn {
       position: fixed;
-      bottom: 40px;
+      bottom: -80px;
       right: 30px;
       width: 56px;
       height: 56px;
@@ -226,7 +226,6 @@
       border: none;
       cursor: pointer;
       opacity: 0;
-      visibility: hidden;
       transform: translateY(20px);
       transition: opacity 0.6s ease, transform 0.6s ease, visibility 0.6s;
       box-shadow: 0 0 15px var(--neon-blue);
@@ -235,8 +234,7 @@
 
     #toTopBtn.show {
       opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
+      bottom: 40px
     }
 
     @media (max-width: 600px) {
