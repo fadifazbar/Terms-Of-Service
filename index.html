@@ -214,9 +214,9 @@
 
     /* To Top Button */
     #toTopBtn {
-      position: fixed;
-      right: 30px;
-      bottom: 40px;
+      position: fixed; /* makes it follow the screen, not the page */
+      right: 25px;
+      bottom: 25px; /* always stays near screen edge */
       width: 56px;
       height: 56px;
       border-radius: 50%;
@@ -228,10 +228,11 @@
       opacity: 0;
       visibility: hidden;
       transform: translateY(40px);
-      transition: opacity 0.6s ease, transform 0.6s ease, visibility 0.6s ease;
-      box-shadow: 0 0 15px var(--neon-blue);
-      z-index: 999;
+      transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+      box-shadow: 0 0 20px rgba(0, 224, 255, 0.6);
+      z-index: 9999; /* stay above all elements */
     }
+
 
     #toTopBtn.show {
       opacity: 1;
